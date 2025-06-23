@@ -12,7 +12,7 @@ useEffect(()=>{
 
 let MainUsername;
 try{
-    const response = await axios.post('http://localhost:8080/user/gte_all_addactivity',{
+    const response = await axios.post('https://zoomcloneproject.onrender.com/gte_all_addactivity',{
    token: localStorage.getItem("token")
 })
  MainUsername = response.data[0].username
@@ -20,7 +20,7 @@ try{
 catch(e){
     console.log(e)
 }
-let res2 = await axios.post('http://localhost:8080/user/history',{
+let res2 = await axios.post('https://zoomcloneproject.onrender.com/user/history',{
     username:MainUsername
 })
 

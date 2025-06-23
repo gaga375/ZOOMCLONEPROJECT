@@ -109,7 +109,7 @@ const authContext = useContext(AuthContext);
     }
 
 try {
-  const response = await axios.post('http://localhost:8080/user/signup', {
+  const response = await axios.post('https://zoomcloneproject.onrender.com/signup', {
    name:name.value ,
     username: email.value,
     password: password.value,

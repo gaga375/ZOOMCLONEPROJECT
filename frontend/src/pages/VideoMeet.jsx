@@ -215,33 +215,95 @@ let getUserMedia = ()=>{
        } 
     }
 }
+let gotMessageFromServer = (fromId, message) => {
+    var signal = JSON.parse(message);
 
+    if (fromId !== socketIdRef.current) {
+        // Ensure connection exists
+        if (!connections[fromId]) {
+            connections[fromId] = new RTCPeerConnection(peerConfigConnections);
 
-let gotMessageFromServer = (fromId,message) =>{
-var signal = JSON.parse(message)
+            connections[fromId].onicecandidate = function (event) {
+                if (event.candidate != null) {
+                    socketRef.current.emit('signal', fromId, JSON.stringify({"ice": event.candidate}));
+                }
+            };
 
-if(fromId !== socketIdRef.current){
-    if(signal.sdp){
+            connections[fromId].onaddstream = (event) => {
+                let videoExists = videoRef.current.find(video => video.socketId === fromId);
+                if (videoExists) {
+                    setVideos(videos => {
+                        const updatedVideos = videos.map(video =>
+                            video.socketId === fromId ? { ...video, stream: event.stream } : video
+                        );
+                        videoRef.current = updatedVideos;
+                        return updatedVideos;
+                    });
+                } else {
+                    let newVideo = {
+                        socketId: fromId,
+                        stream: event.stream,
+                        autoPlay: true,
+                        playsinline: true
+                    };
+                    setVideos(videos => {
+                        const updatedVideos = [...videos, newVideo];
+                        videoRef.current = updatedVideos;
+                        return updatedVideos;
+                    });
+                }
+            };
 
-        connections[fromId].setRemoteDescription(new RTCSessionDescription(signal.sdp)).then(()=>{
-        if( signal.sdp.type === "offer"){
-
-            connections[fromId].createAnswer().then((description)=>{
-                connections[fromId].setLocalDescription(description).then(()=>{
-                    socketRef.current.emit('signal',fromId,JSON.stringify({"sdp":connections[fromId].localDescription}))
-                }).catch(e=>console.log(e));
-
-            }).catch(e=>console.log(e))
+            if (window.localStream) {
+                connections[fromId].addStream(window.localStream);
+            }
         }
-      }).catch(e=>console.log(e))
+
+        // Now it is safe to use setRemoteDescription
+        if (signal.sdp) {
+            connections[fromId].setRemoteDescription(new RTCSessionDescription(signal.sdp)).then(() => {
+                if (signal.sdp.type === "offer") {
+                    connections[fromId].createAnswer().then((description) => {
+                        connections[fromId].setLocalDescription(description).then(() => {
+                            socketRef.current.emit('signal', fromId, JSON.stringify({ "sdp": connections[fromId].localDescription }));
+                        }).catch(e => console.log(e));
+                    }).catch(e => console.log(e));
+                }
+            }).catch(e => console.log(e));
+        }
+
+        if (signal.ice) {
+            connections[fromId].addIceCandidate(new RTCIceCandidate(signal.ice)).catch(e => console.log(e));
+        }
     }
+};
 
-if(signal.ice){
-    connections[fromId].addIceCandidate(new RTCIceCandidate(signal.ice)).catch(e=>console.log(e));
-}
 
-  }
- }
+// let gotMessageFromServer = (fromId,message) =>{
+// var signal = JSON.parse(message)
+
+// if(fromId !== socketIdRef.current){
+//     if(signal.sdp){
+
+//         connections[fromId].setRemoteDescription(new RTCSessionDescription(signal.sdp)).then(()=>{
+//         if( signal.sdp.type === "offer"){
+
+//             connections[fromId].createAnswer().then((description)=>{
+//                 connections[fromId].setLocalDescription(description).then(()=>{
+//                     socketRef.current.emit('signal',fromId,JSON.stringify({"sdp":connections[fromId].localDescription}))
+//                 }).catch(e=>console.log(e));
+
+//             }).catch(e=>console.log(e))
+//         }
+//       }).catch(e=>console.log(e))
+//     }
+
+// if(signal.ice){
+//     connections[fromId].addIceCandidate(new RTCIceCandidate(signal.ice)).catch(e=>console.log(e));
+// }
+
+//   }
+//  }
 
 let addMessage = (data,sender,socketIdSender)=>{
 
@@ -364,7 +426,7 @@ catch (e){
 
 let MainUsername ;
 try{
-const response = await axios.post('http://localhost:8080/user/gte_all_addactivity',{
+const response = await axios.post('https://zoomcloneproject.onrender.com/user/gte_all_addactivity',{
 token: localStorage.getItem("token")
 })
  MainUsername = response.data[0].username
@@ -374,7 +436,7 @@ catch (e){
   console.log(e)
 }
 try{
-const response = await axios.post('http://localhost:8080/user/gte_all_addactivity/add',{
+const response = await axios.post('https://zoomcloneproject.onrender.com/user/gte_all_addactivity/add',{
 token:localStorage.getItem("token"),
 mettingCode:localStorage.getItem('meetingCODE'),
 Username:MainUsername

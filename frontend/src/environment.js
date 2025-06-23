@@ -1,5 +1,5 @@
-let IS_PROD = true;
-const server =  "http://localhost:8080"
+
+const server =  "https://zoomcloneproject.onrender.com"
 
 
 export default server;
