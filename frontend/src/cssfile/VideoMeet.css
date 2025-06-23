@@ -1,0 +1,266 @@
+.container{
+    background-color: aquamarine;
+    height: 100vh;
+}
+.mainvideo{
+    height: 15rem;
+    width: 20rem;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 6rem;
+    right: 12rem;
+}
+.mainvideo video{
+    height: 17rem;
+     object-fit: cover;
+   width:  27rem;
+   border-radius: 10px;
+ 
+}
+/* h2{
+padding: 5rem 0 0 10rem;
+} */
+
+.form-container{
+    padding: 2rem 0 0 10rem;
+}
+.outlined-basic{
+    background-color: aquamarine !important;
+}
+
+.form-container button{
+   margin-top: 1rem;
+}
+
+
+
+/* main videro 2  */
+
+
+.mainvideo2{
+    height: 15rem;
+    width: 20rem;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left :1rem;
+}
+.mainvideo2 video{
+    height: 13rem;
+     object-fit: cover;
+   width:  20rem;
+   border-radius: 10px;
+ 
+}
+
+.all-btn{
+
+ position: absolute;
+    bottom: 1rem;
+    width: 25rem;
+    left: 36%;
+    align-items: center;
+}
+
+.iconButton{
+    color: aliceblue;
+}
+
+.all-btn div{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* StreamVideo */
+.StreamVideo{
+ padding: 2rem 1rem 0 2rem;
+ height: 15rem;
+ width: 28rem;
+}
+
+.StreamVideoFlex1length{
+width: 40rem;
+height: 35rem;
+padding-left: 5rem;
+}
+.StreamVideoFlex1length div video{
+    height: 24rem;
+    width: 35rem;
+}
+
+.StreamVideo video{
+ object-fit: cover;
+ height: 11rem;
+ width: 20rem;
+ margin: 1rem;
+ border-radius: 10px;
+}
+   .StreamVideoFlex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  justify-items: center; 
+}
+
+/*  chat */
+
+.chatcontainer{
+    height: 80vh;
+    width: 21rem;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    background-color: #ffffff96;
+    border-radius: 8px;
+}
+.chatnavcontainer{
+    display: flex;
+    justify-content: space-between;
+}
+.chatcuticon{
+    padding: 0.8rem 1.3rem 0 0 ;
+}
+.chatcontainer h2{
+    padding: 0.5rem 0 0.5rem 2rem;
+}
+
+.chat-sent{
+    position: absolute;
+    bottom: 1rem;
+    left: 0.2rem;
+}
+
+.chat-sent button{
+    margin: 0.5rem 0 0 0.7rem;
+}
+.leftchat{
+    margin-top: 1rem;
+    padding-left: 3%;
+   
+}
+.rightchat{
+     margin-top: 1rem;
+     padding-left: 60%;
+    
+}
+
+.chattextstyle{
+    height: auto;
+    width: 7rem;
+    text-align: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: rgb(243, 62, 62);
+    color: white;
+}
+
+.rightchattextstyle{
+    height: auto;
+    width: 7rem;
+    text-align: center;
+   
+    border-radius: 15px;
+    background-color: rgb(21, 116, 205);
+    color: white;
+}
+
+.chatsenderstyle{
+    font-style: italic;
+    font-size: small;
+}
+
+.chating-area{
+    height: 62vh;
+  overflow: auto;
+}
+   @media only screen and (max-width: 600px) {
+    h2 {
+        padding: 2rem 0 0 5rem;
+        color: aliceblue;
+        font-size: 1.8rem;
+    }
+.container{
+    background-color: rgb(5, 177, 123);
+    height: 75rem;
+    width: 35rem;
+}
+.form-container{
+   padding: 5rem 0 0 20%;
+}
+
+.mainvideo{
+   padding-bottom: 10rem;
+margin-left: 1rem;
+}
+
+.mainvideo video{
+   margin-left: 6.7rem;
+   height: 18rem;
+   width: 28rem;
+}
+.StreamVideoFlex video {
+    height: 10rem;
+    width: 16.5rem;
+    margin-left: 0;
+}
+.StreamVideoFlex{
+
+ display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2px;
+}
+
+.mainvideo2 {
+position: absolute;
+ bottom: -10rem;
+
+}
+.StreamVideo{
+    padding-left: 0.3rem;
+}
+
+}
+
+ @media only screen and (max-width: 600px) {
+    .all-btn{
+   margin-left: -5rem;     
+   margin-bottom: -15rem;
+    
+    }
+    
+.StreamVideoFlex1length{
+width: 30rem;
+height: 25rem;
+padding-left: 1rem;
+}
+.StreamVideoFlex1length div video{
+    height: 24rem;
+    width: 30rem;
+}
+
+ }
+
+
+
+ /* chating tab */
+
+    @media only screen and (max-width: 600px) {
+ .chatcontainer{
+   background-color: beige;
+   top: 3rem;
+   left: 3.8rem;
+   width: 27rem;
+ }
+.chatcontainer h2{
+    color: rgba(0, 0, 0, 0.803);
+}
+.chat-sent input {
+    width: 16rem;
+}
+.chat-sent button{
+    width: 7rem;
+    height: 3.2rem;
+    margin-top: 0;
+}
+
+    }

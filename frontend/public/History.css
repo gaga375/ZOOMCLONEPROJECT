@@ -1,0 +1,24 @@
+
+
+.History-container{
+    height: 100vh;
+    width: 100vw;
+    
+}
+.history-Card{
+    padding-left: 3rem;
+    margin: 1rem 0.2rem 0 0.2rem;
+    height: 6rem;
+    width: 95%;
+ transition: box-shadow .3s;
+ background-color: rgba(247, 243, 243, 0.988);
+}
+.history-Card p {
+
+    font-size: 1.3rem;
+    padding-top: 0.3rem;
+}
+
+.history-Card:hover{
+    box-shadow: 0 0 11px rgba(162, 44, 44, 0.653); 
+}

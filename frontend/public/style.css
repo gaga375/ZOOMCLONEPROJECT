@@ -1,0 +1,253 @@
+*{
+    padding: 0;
+    margin: 0;
+font-family: "Gill Sans", sans-serif;
+}
+
+/* NAVBAR START */
+
+.LandingPageContainer{
+    height: 100vh;
+    width: 100vw;
+    background: url(background.png);
+    background-repeat: no-repeat;
+   background-size: cover;
+}
+.LandingPageNavbar{
+    color: wheat;
+    padding-top: 2.8rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+.LandingPageRightComponent{
+    display: flex;
+    padding-right: 3rem;
+}
+.LandingPageLeftComponent {
+padding-inline: 3.5rem;
+}
+.LandingPageRightComponent p {
+font-size: larger;
+padding-inline: 0.6rem;
+color: #ffff;
+font-weight: 600;
+cursor: pointer;
+}
+.LandingPageNavbarLogin{
+    font-size: larger;
+padding-inline: 0.6rem;
+color: #ffff;
+font-weight: 600;
+    background-color: rgb(225, 116, 0);
+    height: 1.9rem;
+    width: 6rem;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: -0.4rem;
+    padding-top: 0.4rem;
+    cursor: pointer;
+}
+
+/* NAVBAR END */
+
+/* LANDING PAGE MAIN START */
+
+.LandingPageMain{
+    display: flex;
+    color: #ffff;
+    justify-content: space-between;
+    padding-top: 4rem;
+}
+
+.LandingPageMain div div {
+font-size: 3.5rem;
+font-weight: 550;
+padding-top: 1rem;
+}
+
+.LandingPageMain div div span{
+    color: rgb(211, 102, 0);
+}
+.LandingPageMain img{
+    height: 30rem;
+    padding-left: 17rem;
+}
+
+.LandingPageLeftContent{
+    padding-top: 7rem;
+    padding-left: 3rem;
+}
+.LandingPageMain p{
+ padding-top: 1rem; 
+ font-size: 1.4rem;
+}
+
+.LandingPageGetStart{
+ font-size: larger;
+color: #ffff;
+font-weight: 550;
+    background-color: rgb(225, 116, 0);
+    height: 2rem;
+    width: 9rem;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 0.4rem;
+    cursor: pointer;
+}
+
+/*  home conponent  */
+
+.HomeBody-p{
+padding-left: 3.4rem;
+font-size: 1.4rem;
+}
+.HomeComponentContainer{
+    height: 100vh;
+    width: 100vw;
+}
+.headerMain{
+    height: 5rem;
+    background-color: rgba(170, 212, 255, 0.86);
+}
+  .flex{
+    display: flex;
+    justify-content: space-between;
+  }
+.hedaerRightComponentHover{
+  color: rgba(0, 0, 0, 0.714);
+}
+  .headerleftcomponent{
+    width: 15rem;
+    height: 4rem;
+   text-align: center;
+   font-size: 1.6rem;
+   padding-top: 1.5rem;
+   color: rgba(32, 32, 32, 0.886);
+   font-weight: 600;
+  }
+
+  .headerrightcomponent{
+    width: 18rem;
+    height: 2rem;
+    color: rgba(32, 32, 32, 0.886);
+    padding-top: 1.3rem;
+    font-size: 1.2rem;
+  }
+  .flex2{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  /* hover */
+
+   .hedaerRightComponentHover{ 
+ background-color:  rgba(170, 213, 255, 0.908);
+padding-top: 0.2rem;
+width: 7rem;
+border-radius: 15px;
+
+text-align: center;
+  }
+  .hedaerRightComponentHover:hover{
+background-color:rgb(74, 122, 236);
+ transition: 0.4s;
+ cursor: pointer;
+  }
+
+
+  /* body */
+
+  .HomeBody{
+    height: 30rem;
+    width: 40%;
+    padding-top: 17rem;
+  }
+
+  .HomeBodyTextFeld{
+    padding: 1rem 0 0 3.4rem;
+  }
+  .HomeBodyTextFeld button{
+    height: 3.4rem;
+    width: 5.5rem;
+    margin-left: 1rem;
+  }
+
+  .HomeBodyImg img{
+   height: 30rem;
+    width: 80%;
+    object-fit: cover;
+  }
+  .HomeBody2{
+     height: 30rem;
+    width: 40%;
+    padding-top: 5rem;
+   
+  }
+
+
+
+  /* media quary */
+
+
+  /* landingpage */
+
+  @media only screen and (max-width: 600px) {
+    .LandingPageContainer {
+      height: 132rem;
+      width: 63.2rem;
+    }
+  .LandingPageMain{
+    margin-top: 5rem;
+  }
+.LandingPageMain img {
+  padding-left: 0;
+}
+.LandingPageGetStart{
+  font-size: 1.5rem;
+    height: 2.5rem;
+    width: 13rem;
+    padding-top: 0.6rem;
+}
+
+  }
+
+  /*  home component */
+
+  @media only screen and (max-width: 600px) {
+    .headerMain{
+      width: 28rem;
+    }
+.headerleftcomponent{
+  font-size: 1.2rem;
+text-align:left;
+padding-left: 0.7rem;
+}
+.headerrightcomponent{
+  width: 11rem;
+}
+
+.flex2{
+  justify-content:unset;
+}
+.HomeBodyImg img{
+  object-fit: cover;
+  width: 16rem;
+}
+.HomeBody{
+  padding-top: 9rem;
+}
+.HomeBody p {
+  padding-left: 0;
+}
+.HomeBodyTextFeld{
+  padding-left: 1.2rem;
+}
+.HomeBodyTextFeld button {
+margin-left: 0.1rem;
+}
+.HomeBody-p{
+  margin-left: 1.2rem;;
+}
+  }
