@@ -1,4 +1,4 @@
-import { Modal } from "@material-ui/core"
+import Modal from '@mui/material/Modal';
 import WithAuth from '../utils/AuthGard'
 import { useNavigate,Link } from "react-router-dom"
 import { useState } from "react";

@@ -16,7 +16,8 @@ import axios from 'axios';
 import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import { redirect } from 'react-router-dom';
-import { Modal } from '@material-ui/core';
+import Modal from '@mui/material/Modal';
+
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',

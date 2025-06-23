@@ -1,4 +1,4 @@
-import { Modal } from "@material-ui/core";
+import Modal from '@mui/material/Modal';
 import {useRef, useEffect, useState } from "react";
 import Button from '@mui/material/Button';
 import io from 'socket.io-client';
