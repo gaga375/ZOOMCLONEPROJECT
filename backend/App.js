@@ -13,14 +13,15 @@ import userControle from './Routs/Allrouts.js'
 const app = express();
 dotenv.config();
 const server = createServer(app)
-const io = connectoSockit(server,{
-    cors:{
-        origin: "+",
-        mathods:['GET','POST'],
-        allowedHeaders:['+'],
-        Credentials:true
-    }
+const io = connectoSockit(server, {
+  cors: {
+    origin: "*", 
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['*'],
+    credentials: true
+  }
 });
+
 const mongoos_url = process.env.MONGOOS_URL;
 mongoos.connect(mongoos_url);
 
