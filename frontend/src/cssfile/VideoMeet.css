@@ -189,12 +189,12 @@ padding-left: 5rem;
 }
 
 .mainvideo{
-   padding-bottom: 10rem;
-margin-left: 1rem;
+   padding-bottom: 1rem;
+margin-left: 1.2rem;
 }
 
 .mainvideo video{
-   margin-left: 6.7rem;
+   margin-left: 10rem;
    height: 18rem;
    width: 28rem;
 }
