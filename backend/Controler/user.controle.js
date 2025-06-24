@@ -57,30 +57,17 @@ return res.json({ success: false,message:`something went rong ${e}`})
     }
 }
 
-const addToHistory = async(req,res)=>{
-  const {token ,mettingCode, Username} = req.body;
-
-  try {
-    const [User] = await user.find({token:token});
-
-    if (!User) {
-      return res.status(404).json({ message: 'User not found for provided token' });
+let getUserHistory = async(req,res)=>{
+    const {token} = req.body;
+    try{
+   const User = await user.find({token:token});
+   
+   res.json(User)
     }
-
-    const newMeeting = new metting({
-        user_id: User._id,
-        mettingCode: mettingCode,
-        username: Username
-    });
-
-    await newMeeting.save();
-
-    res.status(httpStatus.CREATED).json({message:'Added code to history'});
-  } catch(e){
-    res.json({ message: `Something went wrong ${e}` });
-  }
-};
-
+    catch(e){
+ res.json({message:`something went wrong ${e}}`})
+    }
+}
 
 const addToHistory = async(req,res)=>{
 const {token ,mettingCode,Username} = req.body;
