@@ -8,7 +8,6 @@ let router = Router();
 
 router.route("/login").post(login)
 router.route("/signup").post(signup)
-router.route("/add_to_activity");
 router.route("/gte_all_addactivity").post(getUserHistory)
 router.route("/gte_all_addactivity/add").post(addToHistory)
 router.route("/history").post(fetchHistory)
