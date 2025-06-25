@@ -11,6 +11,7 @@ import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
+import {useNavigate} from 'react-router-dom';
 import MuiCard from '@mui/material/Card';
 import { createContext, useContext, useState } from "react";
 import { styled } from '@mui/material/styles';
@@ -71,6 +72,8 @@ export default function CreateAccount(props) {
 
 const authContext = useContext(AuthContext);
 
+const navigate = useNavigate();
+  
   const handleSubmit = (event) => {
     if (emailError || passwordError) {
       event.preventDefault();
@@ -118,7 +121,7 @@ try {
 setIsError(false)
 setMessage(response.data.message)
   }
- window.location.href ='/login';
+navigate('/login')
 } catch (e) {
   if(e){
     setIsError(true)
