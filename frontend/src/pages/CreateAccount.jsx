@@ -118,7 +118,7 @@ try {
 setIsError(false)
 setMessage(response.data.message)
   }
- window.location.href ='/';
+ window.location.href ='/login';
 } catch (e) {
   if(e){
     setIsError(true)
