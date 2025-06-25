@@ -38,3 +38,9 @@ cd ZOOMCLONEPROJECT
 npm install
 ```
 
+## 📧 Contact
+
+Made with ❤️ by Gagan Baghel  baghelgagan787@gmail.com
+
+📞 Phone: +91-9302327325
+
